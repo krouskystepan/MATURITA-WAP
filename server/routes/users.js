@@ -3,10 +3,11 @@ const router = express.Router();
 
 /**
  * GET ALL USERS
- * URL: http://localhost/users
+ * URL: http://localhost:3000/users/
+ * Method: GET
  */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', (req, res) => {
+  res.send('get all users');
 });
 
 module.exports = router;
