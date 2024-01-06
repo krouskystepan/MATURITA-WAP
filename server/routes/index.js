@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+/**
+ * HOME PAGE
+ * URL: http://localhost:3000/
+ * Method: GET
+ */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
