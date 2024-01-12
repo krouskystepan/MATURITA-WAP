@@ -1,5 +1,11 @@
-exports.createUser = (req, res) => {
-  res.send('user created');
+const User = require('../models/users');
+
+exports.createUser = async (req, res) => {
+  try {
+    // Create a new user
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 exports.getAllUsers = (req, res) => {
