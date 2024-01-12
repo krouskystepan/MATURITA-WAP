@@ -22,16 +22,32 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.getAllUsers = (req, res) => {
-  res.send('get all users');
+//  Tohle je dost simple, je potřeba to upravit a dodělat
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.send(users)
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
-exports.getUserById = (req, res) => {
-  res.send('get user ' + req.params.id);
+exports.getUserById = async (req, res) => {
+  try {
+    const user = await User.find({_id: req.params.id});
+    res.send(user)
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
-exports.deleteUser = (req, res) => {
-  res.send('deleted user ' + req.params.id);
+exports.deleteUser = async (req, res) => {
+  try {
+    await User.deleteOne({ _id: req.params.id });
+    res.send("User deleted")
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
 exports.updateUser = (req, res) => {
