@@ -4,13 +4,22 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
+require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose
-  .connect(
-    'mongodb+srv://admin:adminadmin@cluster0.ft1puvn.mongodb.net/?retryWrites=true&w=majority'
-  )
-  .then(() => console.log('Database connected'))
-  .catch((err) => console.log(err));
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log('\n\u001b[34mDatabase connected\u001b[0m\n'))
+  .catch((err) => {
+    if (
+      err.message.includes(
+        'The `uri` parameter to `openUri()` must be a string, got "undefined"'
+      )
+    ) {
+      console.log('MONGO_URL environment variable is not defined.');
+    } else {
+      console.log(err);
+    }
+  });
 
 // Import routes
 const indexRouter = require('./routes/index');
@@ -42,6 +51,14 @@ app.use(function (err, req, res, next) {
 
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(() => {
+  console.log(
+    `\n\u001b[97mServer is running\u001b[0m: \u001b[34mhttp://localhost:${
+      process.env.PORT || '3000'
+    }\u001b[0m`
+  );
 });
 
 module.exports = app;

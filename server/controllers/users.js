@@ -2,9 +2,23 @@ const User = require('../models/users');
 
 exports.createUser = async (req, res) => {
   try {
-    // Create a new user
+    const data = new User({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      age: req.body.age,
+    });
+    const result = await data.save();
+    if (result) {
+      return res.status(201).send({
+        msg: 'User created',
+        payload: result,
+      });
+    }
+    res.status(500).send({
+      msg: 'User was not created',
+    });
   } catch (error) {
-    res.status(500).send(error)
+    res.status(500).send(error);
   }
 };
 
