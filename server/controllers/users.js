@@ -1,5 +1,16 @@
 const User = require('../models/users')
 
+/*
+Vytvoření uživatele
+METHOD: POST
+URL: /users
+BODY: 
+{
+  "firstName: "Alex",
+  "lastName": "Smith", 
+  "age": 42
+}
+*/
 exports.createUser = async (req, res) => {
   try {
     const data = new User({
@@ -22,6 +33,11 @@ exports.createUser = async (req, res) => {
   }
 }
 
+/*
+Získání všech uživatelů
+METHOD: GET
+URL: /users
+*/
 exports.getAllUsers = async (req, res) => {
   try {
     const result = await User.find()
@@ -37,6 +53,11 @@ exports.getAllUsers = async (req, res) => {
   }
 }
 
+/*
+Získání uživatele skze ID
+METHOD: GET
+URL: /users/65b414cb164c58b7f7a99f4e
+*/
 exports.getUserById = async (req, res) => {
   try {
     const result = await User.findById(req.params.id)
@@ -52,6 +73,11 @@ exports.getUserById = async (req, res) => {
   }
 }
 
+/*
+Odstranění uživatele skrze ID
+METHOD: DELETE
+URL: /users/65b414cb164c58b7f7a99f4e
+*/
 exports.deleteUser = async (req, res) => {
   try {
     const result = await User.findByIdAndDelete(req.params.id)
@@ -66,6 +92,17 @@ exports.deleteUser = async (req, res) => {
   }
 }
 
+/*
+Aktualizování uživatele skze ID
+METHOD: PUT
+URL: /users/65b414cb164c58b7f7a99f4e
+BODY: 
+{
+  "firstName": "Alex",
+  "lastName": "Smith", 
+  "age": 42
+}
+*/
 exports.updateUser = async (req, res) => {
   try {
     const data = {
