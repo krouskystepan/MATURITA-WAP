@@ -15,7 +15,7 @@ mongoose
         'The `uri` parameter to `openUri()` must be a string, got "undefined"'
       )
     ) {
-      console.log('MONGO_URL environment variable is not defined.');
+      console.log('\n\u001b[31mMONGO_URL environment variable is not defined.');
     } else {
       console.log(err);
     }
