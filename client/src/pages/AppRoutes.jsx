@@ -4,6 +4,7 @@ import UserView from './UserView/UserView'
 import UserList from './UserList/UserList'
 import UserCreateForm from './UserCreateForm/UserCreateForm'
 import UserUpdateForm from './UserUpdateForm/UserUpdateForm'
+import CreatedUser from './UserCreateForm/CreatedUser'
 
 export default function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
         <Route path="/users" element={<UserList />} />
         <Route path="/create-user" element={<UserCreateForm />} />
         <Route path="/update-user/:id" element={<UserUpdateForm />} />
+        <Route path="/created-user/:id" element={<CreatedUser />} />
       </Routes>
     </BrowserRouter>
   )

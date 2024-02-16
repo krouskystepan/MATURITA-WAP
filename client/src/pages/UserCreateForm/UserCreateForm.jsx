@@ -7,8 +7,13 @@ export default function UserCreateForm() {
   const [info, setInfo] = useState()
   const navigate = useNavigate()
 
-  const postForm = () => {
-    
+  const postForm = async () => {
+    const user = await createUser(formData)
+    if (user.status === 201) {
+      redirectToSuccessPage(user.payload._id)
+    } else {
+      setInfo(user.msg)
+    }
   }
 
   const handleChange = (e) => {
@@ -23,7 +28,9 @@ export default function UserCreateForm() {
     postForm()
   }
 
-  const redirectToSuccessPage = () => {}
+  const redirectToSuccessPage = (id) => {
+    return navigate(`/created-user/${id}`)
+  }
 
   return (
     <>
@@ -52,6 +59,7 @@ export default function UserCreateForm() {
         />
         <button onClick={handlePost}>Create user</button>
       </form>
+      <p>{info}</p>
       <Link to="/">
         <p>Back</p>
       </Link>

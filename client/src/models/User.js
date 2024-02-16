@@ -1,27 +1,37 @@
 export const getAllUsers = async () => {
-  const req = await fetch('http://localhost:300/users', {
+  const req = await fetch('http://localhost:3000/users', {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     method: 'GET',
   })
-  const data = req.json()
+  const data = await req.json()
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload,
+  }
 }
 
 export const getUserById = async (id) => {
-  const req = await fetch(`http://localhost:300/users/${id}`, {
+  const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     method: 'GET',
   })
-  const data = req.json()
+  const data = await req.json()
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload,
+  }
 }
 
 export const createUser = async (formData) => {
-  const req = await fetch(`http://localhost:300/users`, {
+  const req = await fetch(`http://localhost:3000/users`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -29,11 +39,16 @@ export const createUser = async (formData) => {
     method: 'POST',
     body: JSON.stringify(formData),
   })
-  const data = req.json()
+  const data = await req.json()
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload,
+  }
 }
 
 export const updateUser = async (id, formData) => {
-  const req = await fetch(`http://localhost:300/users/${id}`, {
+  const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -41,16 +56,26 @@ export const updateUser = async (id, formData) => {
     method: 'PUT',
     body: JSON.stringify(formData),
   })
-  const data = req.json()
+  const data = await req.json()
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload,
+  }
 }
 
 export const deleteUser = async (id) => {
-  const req = await fetch(`http://localhost:300/users/${id}`, {
+  const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     method: 'DELETE',
   })
-  const data = req.json()
+  const data = await req.json()
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload,
+  }
 }
