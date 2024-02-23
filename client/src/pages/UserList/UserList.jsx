@@ -40,7 +40,7 @@ export default function UserList() {
     <>
       <h1>UserList</h1>
       {users.map((user, index) => (
-        <UserLink key={index} name={user.firstName} id={user._id}/>
+        <UserLink key={index} firstName={user.firstName} id={user._id}/>
       ))}
       <Link to="/">
         <p>Back</p>
