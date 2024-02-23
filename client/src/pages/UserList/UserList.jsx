@@ -9,7 +9,7 @@ export default function UserList() {
 
   const load = async () => {
     const data = await getAllUsers()
-    if (data.status === 500 || data.status === 404) setLoaded(null)
+    if (data.status === 500 || data.status === 404) return setLoaded(null)
     if (data.status === 200) {
       setUsers(data.payload)
       setLoaded(true)
@@ -23,7 +23,7 @@ export default function UserList() {
   if (loaded === null) {
     return (
       <>
-        <p>Cats not found</p>
+        <p>Users not found</p>
       </>
     )
   }

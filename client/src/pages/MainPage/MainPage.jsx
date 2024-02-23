@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 export default function MainPage() {
   return (
     <>
-      <Link to={'/user'}>
-        <p>User view</p>
-      </Link>
       <Link to="/create-user">
         <p>User create form</p>
       </Link>
