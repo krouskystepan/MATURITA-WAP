@@ -114,6 +114,7 @@ exports.updateUser = async (req, res) => {
     if (result) {
       return res.status(200).send({
         msg: 'User updated',
+        payload: result,
       })
     }
     res.status(500).send({

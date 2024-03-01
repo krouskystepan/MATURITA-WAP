@@ -57,6 +57,9 @@ export const updateUser = async (id, formData) => {
     body: JSON.stringify(formData),
   })
   const data = await req.json()
+
+  console.log("data", data.payload)
+
   return {
     status: req.status,
     msg: data.msg,

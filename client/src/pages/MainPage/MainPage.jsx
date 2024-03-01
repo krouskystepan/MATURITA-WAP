@@ -6,9 +6,6 @@ export default function MainPage() {
       <Link to="/create-user">
         <p>User create form</p>
       </Link>
-      <Link to="/update-user">
-        <p>User update form</p>
-      </Link>
       <Link to="/users">
         <p>User list</p>
       </Link>

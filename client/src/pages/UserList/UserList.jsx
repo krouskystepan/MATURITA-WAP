@@ -18,12 +18,12 @@ export default function UserList() {
 
   useEffect(() => {
     load()
-  }, [users])
+  }, [])
 
   if (loaded === null) {
     return (
       <>
-        <p>Users not found</p>
+        <h1>Users not found</h1>
       </>
     )
   }
@@ -31,7 +31,7 @@ export default function UserList() {
   if (!loaded) {
     return (
       <>
-        <p>Loading...</p>
+        <h1>Loading users...</h1>
       </>
     )
   }
@@ -40,7 +40,7 @@ export default function UserList() {
     <>
       <h1>UserList</h1>
       {users.map((user, index) => (
-        <UserLink key={index} firstName={user.firstName} id={user._id}/>
+        <UserLink key={index} firstName={user.firstName} id={user._id} />
       ))}
       <Link to="/">
         <p>Back</p>

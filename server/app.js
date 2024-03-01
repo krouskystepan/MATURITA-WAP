@@ -6,6 +6,7 @@ const logger = require('morgan')
 const cors = require('cors')
 require('dotenv').config()
 const mongoose = require('mongoose')
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log('\n\u001b[34mDatabase connected\u001b[0m\n'))
