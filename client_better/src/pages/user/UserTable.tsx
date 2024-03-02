@@ -32,7 +32,7 @@ export function UserTable<TData, TValue>({
   })
 
   return (
-    <div className="rounded-md border h-[520px] overflow-scroll">
+    <div className="rounded-md border max-h-[520px] overflow-scroll">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

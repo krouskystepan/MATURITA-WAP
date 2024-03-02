@@ -92,7 +92,7 @@ export default function UserView() {
             </DialogHeader>
             <DialogFooter>
               <DialogClose asChild>
-                <Button type="submit" variant="secondary">
+                <Button variant="secondary">
                   Cancel
                 </Button>
               </DialogClose>

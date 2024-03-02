@@ -5,9 +5,9 @@ import { UserTable } from './UserTable'
 import Navbar from '@/components/shared/Navbar'
 import { Layout404 } from '@/Layouts'
 import { Button } from '@/components/ui/button'
-import { Link } from 'lucide-react'
 
 import type { IUserForm } from '@/types'
+import { Link } from 'react-router-dom'
 
 export default function UserList() {
   const [users, setUsers] = useState<IUserForm[]>([])

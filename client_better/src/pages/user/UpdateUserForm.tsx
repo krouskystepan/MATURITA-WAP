@@ -54,6 +54,7 @@ export default function UpdateUserForm() {
           age: 0,
         }
       }
+      setLoaded(true)
       return {
         firstName: data && data.payload.firstName!,
         lastName: data && data.payload.lastName!,

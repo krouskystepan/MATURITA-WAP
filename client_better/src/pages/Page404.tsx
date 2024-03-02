@@ -7,9 +7,9 @@ export default function Page404() {
     <Layout404>
       <h1>Oops!</h1>
       <h2>404 - PAGE NOT FOUND</h2>
-      <Button>
-        <Link to={'/'}>GO TO HOMEPAGE</Link>
-      </Button>
+      <Link to={'/'}>
+        <Button>GO TO HOMEPAGE</Button>
+      </Link>
     </Layout404>
   )
 }

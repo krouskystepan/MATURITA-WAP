@@ -1,10 +1,6 @@
 import Navbar from '@/components/shared/Navbar'
 
-export default function CenterLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Layout404({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
