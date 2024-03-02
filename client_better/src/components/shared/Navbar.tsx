@@ -5,7 +5,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Separator } from '@/components/ui/separator'
 
 import { Link } from 'react-router-dom'
 import { Fragment } from 'react/jsx-runtime'
@@ -15,7 +14,7 @@ import { ChevronDown } from 'lucide-react'
 
 export default function Navbar() {
   return (
-    <nav className="flex h-7 justify-center items-center space-x-4 text-xl">
+    <header className="p-6 flex h-7 items-center justify-center space-x-8 text-xl">
       {navLinks.map((link, index) => {
         if (link.name === 'Home') {
           return (
@@ -23,9 +22,6 @@ export default function Navbar() {
               <Link to={link.to!}>
                 <p>{link.name}</p>
               </Link>
-              {index !== navLinks.length - 1 && (
-                <Separator orientation="vertical" />
-              )}
             </Fragment>
           )
         }
@@ -48,13 +44,9 @@ export default function Navbar() {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            {index !== navLinks.length - 1 && (
-              <Separator orientation="vertical" />
-            )}
           </Fragment>
         )
       })}
-    </nav>
+    </header>
   )
 }
