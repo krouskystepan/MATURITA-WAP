@@ -1,4 +1,4 @@
-import { RootLayout } from './Layouts'
+import { RootLayout } from './layouts'
 import { ThemeProvider } from './components/theme/theme-provider'
 import Router from './pages/Router'
 
@@ -11,4 +11,3 @@ export default function App() {
     </ThemeProvider>
   )
 }
-// 65e28f82f66b5ea7568f3598

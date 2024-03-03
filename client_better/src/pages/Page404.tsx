@@ -1,4 +1,4 @@
-import { Layout404 } from '@/Layouts'
+import { Layout404 } from '@/layouts'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 

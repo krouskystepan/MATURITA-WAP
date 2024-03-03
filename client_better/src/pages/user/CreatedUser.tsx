@@ -1,4 +1,4 @@
-import { ViewLayout } from '@/Layouts'
+import { ViewLayout } from '@/layouts'
 import { Button } from '@/components/ui/button'
 import { Link, useParams } from 'react-router-dom'
 

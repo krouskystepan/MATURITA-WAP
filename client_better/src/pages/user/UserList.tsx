@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { columns } from './columns'
 import { UserTable } from './UserTable'
 import Navbar from '@/components/shared/Navbar'
-import { Layout404 } from '@/Layouts'
+import { Layout404 } from '@/layouts'
 import { Button } from '@/components/ui/button'
 
 import type { IUserForm } from '@/types'

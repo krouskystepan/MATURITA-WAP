@@ -28,7 +28,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useToast } from '@/components/ui/use-toast'
 import { zodInputStringPipe } from '@/lib/zodInputString'
 import { useState } from 'react'
-import { Layout404 } from '@/Layouts'
+import { Layout404 } from '@/layouts'
 
 const formSchema = z.object({
   firstName: z.string().min(1, 'Please enter a valid value'),

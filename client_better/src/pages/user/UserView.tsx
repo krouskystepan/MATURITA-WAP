@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { deleteUser, getUserById } from '../../models/User'
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import { Layout404, ViewLayout } from '@/Layouts'
+import { Layout404, ViewLayout } from '@/layouts'
 import {
   Dialog,
   DialogClose,
