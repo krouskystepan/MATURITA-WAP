@@ -7,9 +7,11 @@ const cors = require('cors')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
+const PORT = process.env.PORT || '3000'
+
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log('\n\u001b[34mDatabase connected\u001b[0m\n'))
+  .then(() => console.log('\nDatabase connected'))
   .catch((err) => console.log(err))
 
 // Import routes
@@ -45,11 +47,7 @@ app.use(function (err, req, res, next) {
 })
 
 app.listen(() => {
-  console.log(
-    `\n\u001b[97mServer is running\u001b[0m: \u001b[34mhttp://localhost:${
-      process.env.PORT || '3000'
-    }\u001b[0m`
-  )
+  console.log(`\nServer is running: http://localhost:${PORT}`)
 })
 
 module.exports = app
