@@ -29,4 +29,8 @@ npm i && npm run dev
 
 2. Udělej CSS
 
+### Ostatní
+
+- Nezapomeň udělat dokumentaci
+
 ##### Good Luck
