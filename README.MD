@@ -1,14 +1,32 @@
-<h1>Server</h1>
-<ol>
-    <li>Vytvoř si na serveru soubor .env a do něj dej MONGO_URL=_URL_K_DATABAZI_</li>
-    <ul>
-        <li>Ukázka je v .env.example</li>
-    </ul>
-    <li>npm i a npm start</li>
-    <li>Upravuj jen controllers, models, routes a app.js</li>
-</ol>
-<br/>
-<h1>Client</h1>
-<ol>
-    <li>npm i a npm run dev</li>
-</ol>
+## Návod
+
+### Server
+
+1. Vytvoř si na serveru soubor ".env" a do něj dej
+
+```bash
+MONGO_URL=<URL_K_DATABAZI>
+```
+
+- ukázka je v .env.example
+  - můžeš klidně smazat .example a použít ten soubor
+
+2. Napiš
+
+```bash
+npm i && npm start
+```
+
+- upravuj jen controllers, models, routes a app.js
+
+### Klient
+
+1. Napiš
+
+```bash
+npm i && npm run dev
+```
+
+2. Udělej CSS
+
+##### Good Luck
