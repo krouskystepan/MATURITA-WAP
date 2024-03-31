@@ -112,7 +112,7 @@ export const updateUser = async (req: Request, res: Response) => {
       new: true,
     })
     if (result) {
-      return res.status(200).send({
+      return res.status(201).send({
         msg: 'User updated',
         payload: result,
       })

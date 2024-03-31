@@ -10,6 +10,6 @@
   },
   "typedocOptions": {
     "out": "./docs",
-    "entryPoints": ["./controllers/*.ts"]
+    "entryPoints": ["./src/controllers/*.ts"]
   }
 }
