@@ -14,7 +14,10 @@ MONGO_URL=<URL_K_DATABAZI>
 2. Napiš
 
 ```bash
-npm i && npm start
+npm i
+```
+```bash
+npm start
 ```
 
 - upravuj jen controllers, models, routes a app.js
@@ -24,7 +27,10 @@ npm i && npm start
 1. Napiš
 
 ```bash
-npm i && npm run dev
+npm i
+```
+```bash
+npm run dev
 ```
 
 2. Udělej CSS
