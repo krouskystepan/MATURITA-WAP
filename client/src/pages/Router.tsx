@@ -9,6 +9,9 @@ import CreatedUser from "./user/CreatedUser";
 import UpdateUserForm from "./user/UpdateUserForm";
 import UpdatedUser from "./user/UpdatedUser";
 
+/**
+ * This component defines the routing configuration for the application.
+ */
 export default function Router() {
   return (
     <Routes>

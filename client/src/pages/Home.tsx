@@ -1,3 +1,7 @@
+/**
+ * This component represents the home page of the client side of the Maturita project.
+ // TODO: ADD doc render components
+ */
 export default function Home() {
   return (
     <div className="m-3 space-y-1">

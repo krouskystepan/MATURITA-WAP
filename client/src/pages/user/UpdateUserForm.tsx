@@ -16,20 +16,18 @@ import { z } from "zod";
 import { getUserById, updateUser } from "@/models/User";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import { UserFormSchema } from "@/types/zod/schemas";
 
-const formSchema = z.object({
-  firstName: z.string().min(1, "Please enter a valid value"),
-  lastName: z.string().min(1, "Please enter a valid value"),
-  age: z.coerce.number().positive("Please enter a valid number"),
-});
-
+/**
+ * This component displays a form to update user information based on the provided ID.
+ */
 export default function UpdateUserForm() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState<boolean | null>(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof UserFormSchema>>({
+    resolver: zodResolver(UserFormSchema),
     defaultValues: async () => {
       const data = await getUserById(id!);
       if (data.status === 500 || data.status === 404) {
@@ -49,7 +47,7 @@ export default function UpdateUserForm() {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof UserFormSchema>) => {
     try {
       const user = await updateUser(id!, values);
 

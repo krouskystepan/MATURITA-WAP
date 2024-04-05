@@ -1,5 +1,9 @@
 import type { IUserForm } from "@/types";
 
+/**
+ * Function to fetch all users from the server.
+ * @returns Object containing status, message, and payload data.
+ */
 export const getAllUsers = async () => {
   const req = await fetch("http://localhost:3000/users", {
     headers: {
@@ -16,6 +20,11 @@ export const getAllUsers = async () => {
   };
 };
 
+/**
+ * Function to fetch a user by their ID from the server.
+ * @param id string - ID of the user to fetch.
+ * @returns Object containing status, message, and payload data.
+ */
 export const getUserById = async (id: string) => {
   const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {
@@ -32,6 +41,11 @@ export const getUserById = async (id: string) => {
   };
 };
 
+/**
+ * Function to create a new user on the server.
+ * @param formData IUserForm - Form data for the new user.
+ * @returns Object containing status, message, and payload data.
+ */
 export const createUser = async (formData: IUserForm) => {
   const req = await fetch(`http://localhost:3000/users`, {
     headers: {
@@ -49,6 +63,12 @@ export const createUser = async (formData: IUserForm) => {
   };
 };
 
+/**
+ * Function to update an existing user on the server.
+ * @param id string - ID of the user to update.
+ * @param formData IUserForm - Form data for the updated user.
+ * @returns Object containing status, message, and payload data.
+ */
 export const updateUser = async (id: string, formData: IUserForm) => {
   const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {
@@ -67,6 +87,11 @@ export const updateUser = async (id: string, formData: IUserForm) => {
   };
 };
 
+/**
+ * Function to delete a user from the server.
+ * @param id string - ID of the user to delete.
+ * @returns Object containing status, message, and payload data.
+ */
 export const deleteUser = async (id: string) => {
   const req = await fetch(`http://localhost:3000/users/${id}`, {
     headers: {

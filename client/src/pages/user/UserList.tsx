@@ -12,10 +12,16 @@ import { IUserForm } from "@/types";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * This component displays a list of users fetched from the server.
+ */
 export default function UserList() {
   const [users, setUsers] = useState<IUserForm[]>([]);
   const [loaded, setLoaded] = useState<boolean | null>(false);
 
+  /**
+   * Function to load users from the server.
+   */
   const load = async () => {
     const data = await getAllUsers();
     if (data.status === 500 || data.status === 404) return setLoaded(null);

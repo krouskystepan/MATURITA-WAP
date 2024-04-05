@@ -15,12 +15,19 @@ import {
 
 import type { IUserForm } from "@/types";
 
+/**
+ * This component displays the details of a user retrieved from the server based on the provided ID.
+ * It allows the user to update or delete the user's information.
+ */
 export default function UserView() {
   const { id } = useParams();
   const [user, setUser] = useState<IUserForm>();
   const [loaded, setLoaded] = useState<boolean | null>(false);
   const navigate = useNavigate();
 
+  /**
+   * Function to load user details from the server.
+   */
   const load = async () => {
     const data = await getUserById(id!);
 

@@ -1,3 +1,6 @@
+/**
+ * Array of navigation links
+ */
 export const navLinks = [
   {
     category: "Users",

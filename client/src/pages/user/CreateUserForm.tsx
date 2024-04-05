@@ -15,18 +15,13 @@ import { z } from "zod";
 
 import { createUser } from "@/models/User";
 import { useNavigate } from "react-router-dom";
-
-const formSchema = z.object({
-  firstName: z.string().min(1, "Please enter a valid value"),
-  lastName: z.string().min(1, "Please enter a valid value"),
-  age: z.coerce.number().positive("Please enter a valid number"),
-});
+import { UserFormSchema } from "@/types/zod/schemas";
 
 export default function CreateUserForm() {
   const navigate = useNavigate();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof UserFormSchema>>({
+    resolver: zodResolver(UserFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -34,7 +29,7 @@ export default function CreateUserForm() {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof UserFormSchema>) => {
     try {
       const user = await createUser(values);
       if (user.status === 201) {

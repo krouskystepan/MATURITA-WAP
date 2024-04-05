@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
 
+/**
+ * This component represents the page displayed when a new user is successfully created.
+ * It displays the ID of the created user and provides a button to view the details.
+ */
 export default function CreatedUser() {
   const { id } = useParams();
 

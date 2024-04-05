@@ -1,3 +1,6 @@
+/**
+ * This component represents the 404 Not Found page, displayed when a user tries to access a route that does not exist in the application.
+ */
 export default function NotFound() {
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4">
