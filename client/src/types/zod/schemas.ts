@@ -1,8 +1,9 @@
 import { z } from "zod";
 
 /**
- * Schema for form validation
+ * Schemas for form validation
  */
+
 export const UserFormSchema = z.object({
   firstName: z.string().min(1, "Please enter a valid value"),
   lastName: z.string().min(1, "Please enter a valid value"),
