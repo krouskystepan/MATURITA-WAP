@@ -17,6 +17,9 @@ import { createUser } from "@/models/User";
 import { useNavigate } from "react-router-dom";
 import { UserFormSchema } from "@/types/zod/schemas";
 
+/**
+ * Component form for creating a new user
+ */
 export default function CreateUserForm() {
   const navigate = useNavigate();
 
