@@ -10,10 +10,10 @@ export default function CreatedJuice() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">Juice was created: {id}</h1>
+      <h1 className="text-3xl font-bold">Byl vytvořen džus s ID: {id}</h1>
       <Link to={`/juice/${id}`}>
         <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-          View
+          Prohlédnout
         </Button>
       </Link>
     </section>

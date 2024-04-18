@@ -56,48 +56,48 @@ export default function WizardView() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Wizard Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Čaroděj nebyl nalezen</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading wizard...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám čaroděje...</h1>;
 
   return (
     <section>
-      <h2 className="text-2xl font-bold">Wizard ID: {id}</h2>
-      <p>Name: {wizard?.name}</p>
-      <p>Stick: {wizard?.stick}</p>
-      <p>Age: {wizard?.age}</p>
+      <h2 className="text-2xl font-bold">ID čaroděje: {id}</h2>
+      <p>Jméno: {wizard?.name}</p>
+      <p>Hůlka: {wizard?.stick}</p>
+      <p>Věk: {wizard?.age}</p>
       <div className="mt-2 space-x-3">
         <Link to={`/update-wizard/${id}`}>
           <Button className="bg-orange-600 text-white hover:bg-orange-600/90">
-            Update
+            Aktualizovat
           </Button>
         </Link>
         <Dialog>
           <DialogTrigger asChild>
             <Button className="bg-red-600 text-white hover:bg-red-600/90">
-              Delete
+              Smazat
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Are you absolutely sure?</DialogTitle>
+              <DialogTitle>Jste si jistí?</DialogTitle>
               <DialogDescription>
-                This action cannot be undone. This will permanently delete
-                wizard from our servers.
+                Tato akce nemůže být vrácena a smaže všechny záznamy z našich
+                serverů
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
               <DialogClose asChild>
-                <Button variant="secondary">Cancel</Button>
+                <Button variant="secondary">Zrušit</Button>
               </DialogClose>
               <DialogClose asChild>
                 <Button variant="destructive" onClick={handleDelete}>
-                  Delete
+                  Smazat
                 </Button>
               </DialogClose>
             </DialogFooter>

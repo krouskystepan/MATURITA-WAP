@@ -57,7 +57,7 @@ export default function CreateCameramanForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Jméno fotografa</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -71,7 +71,7 @@ export default function CreateCameramanForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Salary</FormLabel>
+              <FormLabel>Požadovaný plat</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="15000" {...field} />
               </FormControl>
@@ -84,7 +84,7 @@ export default function CreateCameramanForm() {
           name="camera"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Camera</FormLabel>
+              <FormLabel>Kamera</FormLabel>
               <FormControl>
                 <Input placeholder="Canon 8k" {...field} />
               </FormControl>
@@ -93,7 +93,9 @@ export default function CreateCameramanForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>
+            Vytvořit forografa
+          </Button>
         </div>
       </form>
     </Form>

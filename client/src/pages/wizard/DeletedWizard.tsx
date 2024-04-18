@@ -9,7 +9,7 @@ export default function DeletedWizard() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">Wizard {id} was deleted</h1>
+      <h1 className="text-3xl font-bold">Čaroděj s ID:{id} byl odstraněn</h1>
     </section>
   );
 }

@@ -68,14 +68,14 @@ export default function UpdateWizardForm() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Wizard Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Čaroděj nebyl nalezen</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading wizard...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám čaroděje...</h1>;
 
   return (
     <Form {...form}>
@@ -85,7 +85,7 @@ export default function UpdateWizardForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Jmnéno</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -98,7 +98,7 @@ export default function UpdateWizardForm() {
           name="stick"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Stick</FormLabel>
+              <FormLabel>Hůlka</FormLabel>
               <FormControl>
                 <Input placeholder="Nejlepsi" {...field} />
               </FormControl>
@@ -112,7 +112,7 @@ export default function UpdateWizardForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Age</FormLabel>
+              <FormLabel>Věk</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="33" {...field} />
               </FormControl>
@@ -121,7 +121,7 @@ export default function UpdateWizardForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>Aktualizovat</Button>
         </div>
       </form>
     </Form>

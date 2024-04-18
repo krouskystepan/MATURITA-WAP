@@ -3,53 +3,53 @@
  */
 export const navLinks = [
   {
-    category: "Wizards",
+    category: "Čarodějové",
     links: [
       {
-        title: "Create Wizard",
+        title: "Přidat inzerát pro Čaroděje",
         url: "/create-wizard",
       },
       {
-        title: "Wizard List",
+        title: "Inzeráty s Čarodějmi",
         url: "/wizards",
       },
     ],
   },
   {
-    category: "Juices",
+    category: "Džusy",
     links: [
       {
-        title: "Create Juice",
+        title: "Přidat inzerát pro Džus",
         url: "/create-juice",
       },
       {
-        title: "Juice List",
+        title: "Inzeráty s Džusy",
         url: "/juices",
       },
     ],
   },
   {
-    category: "FastFoods",
+    category: "FastFoody",
     links: [
       {
-        title: "Create FastFood",
+        title: "Přidat inzerát pro FastFood",
         url: "/create-fastFood",
       },
       {
-        title: "FastFood List",
+        title: "Inzeráty s FastFoody",
         url: "/fastFoods",
       },
     ],
   },
   {
-    category: "Cemaraman",
+    category: "Fotografové",
     links: [
       {
-        title: "Create Cemaraman",
+        title: "Přidat inzerát pro Fotografa",
         url: "/create-cameraman",
       },
       {
-        title: "Cemaraman List",
+        title: "Inzeráty s Fotografy",
         url: "/cameramans",
       },
     ],

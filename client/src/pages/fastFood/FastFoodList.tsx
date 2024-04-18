@@ -37,31 +37,31 @@ export default function FastFoodList() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">FastFoods Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Žádné fastfoody nebyly nalezeny</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading fastFood...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám fastfoody...</h1>;
 
   return (
     <section className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {fastFoods.map((fastFood) => (
         <Card key={fastFood._id}>
           <CardHeader>
-            <CardTitle>{fastFood.company}</CardTitle>
+            <CardTitle>Firma: {fastFood.company}</CardTitle>
             <CardDescription className="break-all">
               {fastFood._id}
             </CardDescription>
           </CardHeader>
           <CardContent>Menu: {fastFood.menu}</CardContent>
-          <CardContent>Price: {fastFood.price}</CardContent>
+          <CardContent>Cena za objednávku: {fastFood.price}</CardContent>
           <CardFooter className="flex justify-end gap-2">
             <Link to={`/fastFood/${fastFood._id}`}>
               <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-                View
+                Prohlédnout
               </Button>
             </Link>
           </CardFooter>

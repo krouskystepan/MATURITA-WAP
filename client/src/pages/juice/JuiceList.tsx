@@ -37,29 +37,29 @@ export default function JuiceList() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Juices Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Nebyli nalezené žádné džusy</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading juice...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám džusy...</h1>;
 
   return (
     <section className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {juices.map((juice) => (
         <Card key={juice._id}>
           <CardHeader>
-            <CardTitle>{juice.company}</CardTitle>
+            <CardTitle>Firma: {juice.company}</CardTitle>
             <CardDescription className="break-all">{juice._id}</CardDescription>
           </CardHeader>
-          <CardContent>Type: {juice.type}</CardContent>
-          <CardContent>Price: {juice.price}</CardContent>
+          <CardContent>Typ džusu: {juice.type}</CardContent>
+          <CardContent>Cena za kus: {juice.price}</CardContent>
           <CardFooter className="flex justify-end gap-2">
             <Link to={`/juice/${juice._id}`}>
               <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-                View
+                Prohlédnout
               </Button>
             </Link>
           </CardFooter>

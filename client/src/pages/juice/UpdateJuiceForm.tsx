@@ -68,14 +68,14 @@ export default function UpdateJuiceForm() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Juice Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Džus nebyl nalezen</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading juice...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám džus...</h1>;
 
   return (
     <Form {...form}>
@@ -85,7 +85,7 @@ export default function UpdateJuiceForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company</FormLabel>
+              <FormLabel>Firma</FormLabel>
               <FormControl>
                 <Input placeholder="Relax" {...field} />
               </FormControl>
@@ -98,7 +98,7 @@ export default function UpdateJuiceForm() {
           name="type"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Type</FormLabel>
+              <FormLabel>Typ džusu</FormLabel>
               <FormControl>
                 <Input placeholder="Jablko" {...field} />
               </FormControl>
@@ -112,7 +112,7 @@ export default function UpdateJuiceForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Price</FormLabel>
+              <FormLabel>Cena za kus</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="25" {...field} />
               </FormControl>

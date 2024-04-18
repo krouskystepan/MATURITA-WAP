@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Code, Home, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Separator } from "../ui/separator";
 import { useState } from "react";
@@ -23,8 +23,7 @@ export default function Navbar() {
         <div className="text-xl text-secondary">
           {/* App title */}
           <div className="mt-1 flex items-center justify-center gap-3 p-2.5 text-lg">
-            <Code />
-            <h1 className="font-bold uppercase text-gray-200">Maturita app</h1>
+            <h1 className="font-bold uppercase text-gray-200">Inzeráty</h1>
           </div>
           <Separator className="bg-gray-400" />
         </div>
@@ -33,8 +32,7 @@ export default function Navbar() {
           to="/"
           className="mt-4 flex cursor-pointer items-center gap-2 rounded-sm p-2 text-lg font-semibold text-secondary duration-150 hover:bg-primary"
         >
-          <Home size={20} />
-          <span>Home</span>
+          <span>Všechny inzeráty</span>
         </Link>
         {/* Accordion menu for categories and links */}
         <Accordion type="multiple">

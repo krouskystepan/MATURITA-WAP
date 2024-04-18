@@ -56,48 +56,50 @@ export default function CameramanView() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Cameraman Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">
+          Nebyli nalezeni žádní Fotografové
+        </h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading cameraman...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám fotografy...</h1>;
 
   return (
     <section>
-      <h2 className="text-2xl font-bold">Cameraman ID: {id}</h2>
-      <p>Name: {cameraman?.name}</p>
-      <p>Salary: {cameraman?.salary}</p>
-      <p>Camera: {cameraman?.camera}</p>
+      <h2 className="text-2xl font-bold">Fotografovo ID: {id}</h2>
+      <p>Jméno: {cameraman?.name}</p>
+      <p>Požadovaný plat: {cameraman?.salary} Kč</p>
+      <p>Kamera: {cameraman?.camera}</p>
       <div className="mt-2 space-x-3">
         <Link to={`/update-cameraman/${id}`}>
           <Button className="bg-orange-600 text-white hover:bg-orange-600/90">
-            Update
+            Aktualizovat
           </Button>
         </Link>
         <Dialog>
           <DialogTrigger asChild>
             <Button className="bg-red-600 text-white hover:bg-red-600/90">
-              Delete
+              Smazat
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Are you absolutely sure?</DialogTitle>
+              <DialogTitle>Jste si jistí?</DialogTitle>
               <DialogDescription>
-                This action cannot be undone. This will permanently delete
-                cameraman from our servers.
+                Tato akce nemůže být vrácena a smaže všechny záznamy z našich
+                serverů
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
               <DialogClose asChild>
-                <Button variant="secondary">Cancel</Button>
+                <Button variant="secondary">Zrušit</Button>
               </DialogClose>
               <DialogClose asChild>
                 <Button variant="destructive" onClick={handleDelete}>
-                  Delete
+                  Smazat
                 </Button>
               </DialogClose>
             </DialogFooter>

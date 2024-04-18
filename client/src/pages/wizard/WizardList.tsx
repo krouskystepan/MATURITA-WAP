@@ -37,31 +37,31 @@ export default function WizardList() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Wizards Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Čarodějové nebyli nalezeni</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading wizard...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám čaroděje...</h1>;
 
   return (
     <section className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {wizards.map((wizard) => (
         <Card key={wizard._id}>
           <CardHeader>
-            <CardTitle>{wizard.name}</CardTitle>
+            <CardTitle>Jméno: {wizard.name}</CardTitle>
             <CardDescription className="break-all">
               {wizard._id}
             </CardDescription>
           </CardHeader>
-          <CardContent>Stick: {wizard.stick}</CardContent>
-          <CardContent>Age: {wizard.age}</CardContent>
+          <CardContent>Hůlka: {wizard.stick}</CardContent>
+          <CardContent>Věk: {wizard.age}</CardContent>
           <CardFooter className="flex justify-end gap-2">
             <Link to={`/wizard/${wizard._id}`}>
               <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-                View
+                Prohlédnout
               </Button>
             </Link>
           </CardFooter>

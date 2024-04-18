@@ -10,10 +10,12 @@ export default function CreatedFastFood() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">FastFood was updated: {id}</h1>
+      <h1 className="text-3xl font-bold">
+        Fastfood s ID: {id} byl aktualizován
+      </h1>
       <Link to={`/fastFood/${id}`}>
         <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-          View
+          Prohlédnout
         </Button>
       </Link>
     </section>

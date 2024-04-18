@@ -57,7 +57,7 @@ export default function CreateJuiceForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company</FormLabel>
+              <FormLabel>Firma</FormLabel>
               <FormControl>
                 <Input placeholder="Relax" {...field} />
               </FormControl>
@@ -70,7 +70,7 @@ export default function CreateJuiceForm() {
           name="type"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Type</FormLabel>
+              <FormLabel>Typ džusu</FormLabel>
               <FormControl>
                 <Input placeholder="Jablko" {...field} />
               </FormControl>
@@ -84,7 +84,7 @@ export default function CreateJuiceForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Price</FormLabel>
+              <FormLabel>Cena za kus</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="25" {...field} />
               </FormControl>
@@ -93,7 +93,7 @@ export default function CreateJuiceForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>Vytvořit džus</Button>
         </div>
       </form>
     </Form>

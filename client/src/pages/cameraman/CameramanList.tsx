@@ -37,31 +37,33 @@ export default function CameramanList() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Cameramans Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">
+          Nebyli nalezeni žádní Fotografové
+        </h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading cameraman...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám fotografy...</h1>;
 
   return (
     <section className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {cameramans.map((cameraman) => (
         <Card key={cameraman._id}>
           <CardHeader>
-            <CardTitle>{cameraman.name}</CardTitle>
+            <CardTitle>Jméno: {cameraman.name}</CardTitle>
             <CardDescription className="break-all">
               {cameraman._id}
             </CardDescription>
           </CardHeader>
-          <CardContent>Salary: {cameraman.salary}</CardContent>
-          <CardContent>Camera: {cameraman.camera}</CardContent>
+          <CardContent>Požadovaný plat: {cameraman.salary} Kč</CardContent>
+          <CardContent>Kamera: {cameraman.camera}</CardContent>
           <CardFooter className="flex justify-end gap-2">
             <Link to={`/cameraman/${cameraman._id}`}>
               <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-                View
+                Prohlédnout
               </Button>
             </Link>
           </CardFooter>

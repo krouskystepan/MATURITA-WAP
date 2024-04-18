@@ -57,7 +57,7 @@ export default function CreateFastFoodForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Comapny</FormLabel>
+              <FormLabel>Firma</FormLabel>
               <FormControl>
                 <Input placeholder="McDonald" {...field} />
               </FormControl>
@@ -84,7 +84,7 @@ export default function CreateFastFoodForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Price</FormLabel>
+              <FormLabel>Cena za ojednávku</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="150" {...field} />
               </FormControl>
@@ -93,7 +93,9 @@ export default function CreateFastFoodForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>
+            Vytvořit fastfood
+          </Button>
         </div>
       </form>
     </Form>

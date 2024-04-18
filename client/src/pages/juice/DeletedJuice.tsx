@@ -9,7 +9,7 @@ export default function DeletedJuice() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">Juice {id} was deleted</h1>
+      <h1 className="text-3xl font-bold">Džus s ID: {id} byl odstraněn</h1>
     </section>
   );
 }

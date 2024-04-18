@@ -10,10 +10,12 @@ export default function CreatedWizard() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">Wizard was updated: {id}</h1>
+      <h1 className="text-3xl font-bold">
+        Čaroděj s ID: {id} byl aktualizován
+      </h1>
       <Link to={`/wizard/${id}`}>
         <Button className="bg-blue-600 text-white hover:bg-blue-600/90">
-          View
+          Prohlédnout
         </Button>
       </Link>
     </section>

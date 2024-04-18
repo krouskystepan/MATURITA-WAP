@@ -9,7 +9,7 @@ export default function DeletedFastFood() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">FastFood {id} was deleted</h1>
+      <h1 className="text-3xl font-bold">Fastfood s ID: {id} byl odstraněn</h1>
     </section>
   );
 }

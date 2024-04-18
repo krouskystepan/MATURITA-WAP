@@ -9,7 +9,7 @@ export default function DeletedCameraman() {
 
   return (
     <section>
-      <h1 className="text-3xl font-bold">Cameraman {id} was deleted</h1>
+      <h1 className="text-3xl font-bold">Fotograf s ID: {id} byl odstraněn</h1>
     </section>
   );
 }

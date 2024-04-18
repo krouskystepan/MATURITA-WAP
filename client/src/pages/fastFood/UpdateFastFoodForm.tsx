@@ -68,14 +68,14 @@ export default function UpdateFastFoodForm() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">FastFood Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">Fastfood nebyl nalezen</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading fastFood...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám fastfood...</h1>;
 
   return (
     <Form {...form}>
@@ -85,7 +85,7 @@ export default function UpdateFastFoodForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Firma</FormLabel>
               <FormControl>
                 <Input placeholder="kfc" {...field} />
               </FormControl>
@@ -98,7 +98,7 @@ export default function UpdateFastFoodForm() {
           name="menu"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Stick</FormLabel>
+              <FormLabel>Menu</FormLabel>
               <FormControl>
                 <Input placeholder="Wrap" {...field} />
               </FormControl>
@@ -112,7 +112,7 @@ export default function UpdateFastFoodForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Age</FormLabel>
+              <FormLabel>Požadovaná cena</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="125" {...field} />
               </FormControl>
@@ -121,7 +121,7 @@ export default function UpdateFastFoodForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>Aktualizovat</Button>
         </div>
       </form>
     </Form>

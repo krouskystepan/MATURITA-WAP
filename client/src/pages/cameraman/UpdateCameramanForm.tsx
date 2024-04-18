@@ -68,14 +68,16 @@ export default function UpdateCameramanForm() {
 
   if (loaded === null) {
     return (
-      <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">Cameraman Not Found</h2>
+      <div className="spacing-y-4 flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold">
+          Nebyli nalezeni žádní fotografové
+        </h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading cameraman...</h1>;
+    return <h1 className="text-xl font-semibold">Načítám fotografy...</h1>;
 
   return (
     <Form {...form}>
@@ -85,7 +87,7 @@ export default function UpdateCameramanForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Jméno</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -99,7 +101,7 @@ export default function UpdateCameramanForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Salary</FormLabel>
+              <FormLabel>Požadovaný plat</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="1500" {...field} />
               </FormControl>
@@ -112,7 +114,7 @@ export default function UpdateCameramanForm() {
           name="camera"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Camera</FormLabel>
+              <FormLabel>Kamera</FormLabel>
               <FormControl>
                 <Input placeholder="Canon 8k" {...field} />
               </FormControl>
@@ -121,7 +123,7 @@ export default function UpdateCameramanForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>Aktualizovat</Button>
         </div>
       </form>
     </Form>

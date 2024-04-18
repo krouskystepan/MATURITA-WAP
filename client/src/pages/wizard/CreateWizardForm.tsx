@@ -57,7 +57,7 @@ export default function CreateWizardForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Jméno</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -70,7 +70,7 @@ export default function CreateWizardForm() {
           name="stick"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Stick</FormLabel>
+              <FormLabel>Hůlka</FormLabel>
               <FormControl>
                 <Input placeholder="Nejlepsi" {...field} />
               </FormControl>
@@ -84,7 +84,7 @@ export default function CreateWizardForm() {
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Age</FormLabel>
+              <FormLabel>Věk</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="33" {...field} />
               </FormControl>
@@ -93,7 +93,9 @@ export default function CreateWizardForm() {
           )}
         />
         <div className="mt-2 flex justify-end">
-          <Button onClick={form.handleSubmit(onSubmit)}>Submit</Button>
+          <Button onClick={form.handleSubmit(onSubmit)}>
+            Vytvořit čaroděje
+          </Button>
         </div>
       </form>
     </Form>
