@@ -27,4 +27,7 @@ server/.env
 server/.env.local
 server/.DS_Store
 
+server/docs
+server/dist
+
 .DS_Store
