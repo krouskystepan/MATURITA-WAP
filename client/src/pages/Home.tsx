@@ -20,7 +20,7 @@ export default function Home() {
   const [loaded, setLoaded] = useState<boolean | null>(false);
 
   /**
-   * Function to load wizards from the server.
+   * Function to load data from the server.
    */
   const load = async () => {
     const data = await getAllData();
