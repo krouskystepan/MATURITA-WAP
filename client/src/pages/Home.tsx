@@ -81,7 +81,7 @@ export default function Home() {
       )}
       {data.juice.length > 0 && (
         <div>
-          <h1 className="text-2xl font-bold">Juices</h1>
+          <h1 className="text-2xl font-bold">Džusy</h1>
           <div className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {data?.juice.map((juice: any) => (
               <Card key={juice._id}>
@@ -107,7 +107,7 @@ export default function Home() {
       )}
       {data.fastFood.length > 0 && (
         <div>
-          <h1 className="text-2xl font-bold">Fast Foods</h1>
+          <h1 className="text-2xl font-bold">FastFoody</h1>
           <div className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {data?.fastFood.map((fastFood: any) => (
               <Card key={fastFood._id}>
@@ -133,7 +133,7 @@ export default function Home() {
       )}
       {data.cameraman.length > 0 && (
         <div>
-          <h1 className="text-2xl font-bold">Cameramans</h1>
+          <h1 className="text-2xl font-bold">Fotografové</h1>
           <div className="grid grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {data?.cameraman.map((cameraman: any) => (
               <Card key={cameraman._id}>

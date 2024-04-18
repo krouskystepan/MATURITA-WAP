@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Honk&display=swap");
 
-body {
+/* body {
   font-family: "Honk", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -8,7 +8,7 @@ body {
   font-variation-settings:
     "MORF" 15,
     "SHLN" 50;
-}
+} */
 
 @tailwind base;
 @tailwind components;
