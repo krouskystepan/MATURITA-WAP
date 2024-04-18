@@ -1,11 +1,11 @@
-import type { IUserForm } from "@/types";
+import type { IJuiceForm } from "@/types";
 
 /**
- * Function to fetch all users from the server.
+ * Function to fetch all juices from the server.
  * @returns Object containing status, message, and payload data.
  */
-export const getAllUsers = async () => {
-  const req = await fetch("http://localhost:3000/users", {
+export const getAllJuices = async () => {
+  const req = await fetch("http://localhost:3000/juices", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -21,12 +21,12 @@ export const getAllUsers = async () => {
 };
 
 /**
- * Function to fetch a user by their ID from the server.
- * @param id string - ID of the user to fetch.
+ * Function to fetch a juice by their ID from the server.
+ * @param id string - ID of the juice to fetch.
  * @returns Object containing status, message, and payload data.
  */
-export const getUserById = async (id: string) => {
-  const req = await fetch(`http://localhost:3000/users/${id}`, {
+export const getJuiceById = async (id: string) => {
+  const req = await fetch(`http://localhost:3000/juices/${id}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -42,12 +42,12 @@ export const getUserById = async (id: string) => {
 };
 
 /**
- * Function to create a new user on the server.
- * @param formData IUserForm - Form data for the new user.
+ * Function to create a new juice on the server.
+ * @param formData IJuiceForm - Form data for the new juice.
  * @returns Object containing status, message, and payload data.
  */
-export const createUser = async (formData: IUserForm) => {
-  const req = await fetch(`http://localhost:3000/users`, {
+export const createJuice = async (formData: IJuiceForm) => {
+  const req = await fetch(`http://localhost:3000/juices`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -64,13 +64,13 @@ export const createUser = async (formData: IUserForm) => {
 };
 
 /**
- * Function to update an existing user on the server.
- * @param id string - ID of the user to update.
- * @param formData IUserForm - Form data for the updated user.
+ * Function to update an existing juice on the server.
+ * @param id string - ID of the juice to update.
+ * @param formData IJuiceForm - Form data for the updated juice.
  * @returns Object containing status, message, and payload data.
  */
-export const updateUser = async (id: string, formData: IUserForm) => {
-  const req = await fetch(`http://localhost:3000/users/${id}`, {
+export const updateJuice = async (id: string, formData: IJuiceForm) => {
+  const req = await fetch(`http://localhost:3000/juices/${id}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -88,12 +88,12 @@ export const updateUser = async (id: string, formData: IUserForm) => {
 };
 
 /**
- * Function to delete a user from the server.
- * @param id string - ID of the user to delete.
+ * Function to delete a juice from the server.
+ * @param id string - ID of the juice to delete.
  * @returns Object containing status, message, and payload data.
  */
-export const deleteUser = async (id: string) => {
-  const req = await fetch(`http://localhost:3000/users/${id}`, {
+export const deleteJuice = async (id: string) => {
+  const req = await fetch(`http://localhost:3000/juices/${id}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

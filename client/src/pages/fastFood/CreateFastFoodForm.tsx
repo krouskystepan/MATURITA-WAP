@@ -13,30 +13,30 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { createUser } from "@/models/User";
+import { createFastFood } from "@/models/FastFood";
 import { useNavigate } from "react-router-dom";
-import { UserFormSchema } from "@/types/zod/schemas";
+import { FastFoodFormSchema } from "@/types/zod/schemas";
 
 /**
- * Component form for creating a new user
+ * Component form for creating a new fastFood
  */
-export default function CreateUserForm() {
+export default function CreateFastFoodForm() {
   const navigate = useNavigate();
 
-  const form = useForm<z.infer<typeof UserFormSchema>>({
-    resolver: zodResolver(UserFormSchema),
+  const form = useForm<z.infer<typeof FastFoodFormSchema>>({
+    resolver: zodResolver(FastFoodFormSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      age: "" as unknown as number,
+      company: "",
+      menu: "",
+      price: "" as unknown as number,
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof UserFormSchema>) => {
+  const onSubmit = async (values: z.infer<typeof FastFoodFormSchema>) => {
     try {
-      const user = await createUser(values);
-      if (user.status === 201) {
-        redirectToSuccessPage(user.payload._id);
+      const fastFood = await createFastFood(values);
+      if (fastFood.status === 201) {
+        redirectToSuccessPage(fastFood.payload._id);
       } else {
         console.log("Something went wrong");
       }
@@ -46,7 +46,7 @@ export default function CreateUserForm() {
   };
 
   const redirectToSuccessPage = (id: number) => {
-    navigate(`/created-user/${id}`);
+    navigate(`/created-fastFood/${id}`);
   };
 
   return (
@@ -54,12 +54,12 @@ export default function CreateUserForm() {
       <form className="max-w-96 space-y-2">
         <FormField
           control={form.control}
-          name="firstName"
+          name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>First Name</FormLabel>
+              <FormLabel>Comapny</FormLabel>
               <FormControl>
-                <Input placeholder="John" {...field} />
+                <Input placeholder="McDonald" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -67,12 +67,12 @@ export default function CreateUserForm() {
         />
         <FormField
           control={form.control}
-          name="lastName"
+          name="menu"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>Menu</FormLabel>
               <FormControl>
-                <Input placeholder="Dee" {...field} />
+                <Input placeholder="Wrap" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -80,13 +80,13 @@ export default function CreateUserForm() {
         />
         <FormField
           control={form.control}
-          name="age"
+          name="price"
           defaultValue={undefined}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Age</FormLabel>
+              <FormLabel>Price</FormLabel>
               <FormControl>
-                <Input type="number" placeholder="33" {...field} />
+                <Input type="number" placeholder="150" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

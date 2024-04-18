@@ -22,7 +22,10 @@ mongoose
 
 // Routes
 app.use(`/`, require('./routes/index'))
-app.use(`/users`, require('./routes/users'))
+app.use(`/wizards`, require('./routes/wizards'))
+app.use(`/juices`, require('./routes/juices'))
+app.use(`/fastFoods`, require('./routes/fastFoods'))
+app.use(`/cameramans`, require('./routes/cameramans'))
 
 app.listen(PORT, () => {
   console.log(

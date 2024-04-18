@@ -13,47 +13,47 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { getUserById, updateUser } from "@/models/User";
+import { getWizardById, updateWizard } from "@/models/Wizard";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { UserFormSchema } from "@/types/zod/schemas";
+import { WizardFormSchema } from "@/types/zod/schemas";
 
 /**
- * This component displays a form to update user information based on the provided ID.
+ * This component displays a form to update wizard information based on the provided ID.
  */
-export default function UpdateUserForm() {
+export default function UpdateWizardForm() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState<boolean | null>(false);
 
-  const form = useForm<z.infer<typeof UserFormSchema>>({
-    resolver: zodResolver(UserFormSchema),
+  const form = useForm<z.infer<typeof WizardFormSchema>>({
+    resolver: zodResolver(WizardFormSchema),
     defaultValues: async () => {
-      const data = await getUserById(id!);
+      const data = await getWizardById(id!);
       if (data.status === 500 || data.status === 404) {
         setLoaded(null);
         return {
-          firstName: "",
-          lastName: "",
+          name: "",
+          stick: "",
           age: "" as unknown as number,
         };
       }
       setLoaded(true);
       return {
-        firstName: data && data.payload.firstName!,
-        lastName: data && data.payload.lastName!,
+        name: data && data.payload.name!,
+        stick: data && data.payload.stick!,
         age: data && data.payload.age!,
       };
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof UserFormSchema>) => {
+  const onSubmit = async (values: z.infer<typeof WizardFormSchema>) => {
     try {
-      const user = await updateUser(id!, values);
+      const wizard = await updateWizard(id!, values);
 
-      console.log(user);
-      if (user.status === 201) {
-        redirectToSuccessPage(user.payload._id);
+      console.log(wizard);
+      if (wizard.status === 201) {
+        redirectToSuccessPage(wizard.payload._id);
       } else {
         console.log("Something went wrong");
       }
@@ -63,29 +63,29 @@ export default function UpdateUserForm() {
   };
 
   const redirectToSuccessPage = (id: number) => {
-    navigate(`/updated-user/${id}`);
+    navigate(`/updated-wizard/${id}`);
   };
 
   if (loaded === null) {
     return (
       <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">User Not Found</h2>
+        <h2 className="text-4xl font-bold">Wizard Not Found</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading user...</h1>;
+    return <h1 className="text-xl font-semibold">Loading wizard...</h1>;
 
   return (
     <Form {...form}>
       <form className="max-w-96 space-y-2">
         <FormField
           control={form.control}
-          name="firstName"
+          name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>First Name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="John" {...field} />
               </FormControl>
@@ -95,12 +95,12 @@ export default function UpdateUserForm() {
         />
         <FormField
           control={form.control}
-          name="lastName"
+          name="stick"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>Stick</FormLabel>
               <FormControl>
-                <Input placeholder="Dee" {...field} />
+                <Input placeholder="Nejlepsi" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

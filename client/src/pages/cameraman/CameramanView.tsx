@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { deleteUser, getUserById } from "../../models/User";
+import { deleteCameraman, getCameramanById } from "../../models/Cameraman";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,40 +13,40 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import type { IUserForm } from "@/types";
+import type { ICameramanForm } from "@/types";
 
 /**
- * This component displays the details of a user retrieved from the server based on the provided ID.
- * It allows the user to update or delete the user's information.
+ * This component displays the details of a cameraman retrieved from the server based on the provided ID.
+ * It allows the cameraman to update or delete the cameraman's information.
  */
-export default function UserView() {
+export default function CameramanView() {
   const { id } = useParams();
-  const [user, setUser] = useState<IUserForm>();
+  const [cameraman, setCameraman] = useState<ICameramanForm>();
   const [loaded, setLoaded] = useState<boolean | null>(false);
   const navigate = useNavigate();
 
   /**
-   * Function to load user details from the server.
+   * Function to load cameraman details from the server.
    */
   const load = async () => {
-    const data = await getUserById(id!);
+    const data = await getCameramanById(id!);
 
     if (data.status === 500 || data.status === 404) return setLoaded(null);
     if (data.status === 200) {
-      setUser(data.payload);
+      setCameraman(data.payload);
       setLoaded(true);
     }
   };
 
   const handleDelete = async () => {
-    const result = await deleteUser(id as string);
+    const result = await deleteCameraman(id as string);
     if (result.status === 200) {
       redirect(id as string);
     }
   };
 
   const redirect = (id: string) => {
-    return navigate(`/deleted-user/${id}`);
+    return navigate(`/deleted-cameraman/${id}`);
   };
 
   useEffect(() => {
@@ -57,22 +57,22 @@ export default function UserView() {
   if (loaded === null) {
     return (
       <div className="spacing-y-4 flex h-screen flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">User Not Found</h2>
+        <h2 className="text-4xl font-bold">Cameraman Not Found</h2>
       </div>
     );
   }
 
   if (!loaded)
-    return <h1 className="text-xl font-semibold">Loading user...</h1>;
+    return <h1 className="text-xl font-semibold">Loading cameraman...</h1>;
 
   return (
     <section>
-      <h2 className="text-2xl font-bold">User ID: {id}</h2>
-      <p>First name: {user?.firstName}</p>
-      <p>Last name: {user?.lastName}</p>
-      <p>Age: {user?.age}</p>
+      <h2 className="text-2xl font-bold">Cameraman ID: {id}</h2>
+      <p>Name: {cameraman?.name}</p>
+      <p>Salary: {cameraman?.salary}</p>
+      <p>Camera: {cameraman?.camera}</p>
       <div className="mt-2 space-x-3">
-        <Link to={`/update-user/${id}`}>
+        <Link to={`/update-cameraman/${id}`}>
           <Button className="bg-orange-600 text-white hover:bg-orange-600/90">
             Update
           </Button>
@@ -87,8 +87,8 @@ export default function UserView() {
             <DialogHeader>
               <DialogTitle>Are you absolutely sure?</DialogTitle>
               <DialogDescription>
-                This action cannot be undone. This will permanently delete user
-                from our servers.
+                This action cannot be undone. This will permanently delete
+                cameraman from our servers.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>

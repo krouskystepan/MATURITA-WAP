@@ -15,7 +15,7 @@ export default function ViewLayout({
   return (
     <main className="flex bg-secondary-foreground">
       <Navbar />
-      <section className="m-4 h-[calc(100dvh-32px)] flex-1 rounded-2xl bg-primary-foreground p-4 md:min-w-96">
+      <section className="m-4 h-full min-h-[calc(100dvh-32px)] flex-1 rounded-2xl bg-primary-foreground p-4 md:min-w-96">
         {children}
       </section>
     </main>
