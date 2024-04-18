@@ -128,7 +128,7 @@ export default function Home() {
         )}
       </div>
       <div>
-        <h1>Cameramans Food</h1>
+        <h1>Cameramans</h1>
         {data.cameraman.length ? (
           data?.cameraman.map((cameraman: any) => (
             <Card key={cameraman._id}>
