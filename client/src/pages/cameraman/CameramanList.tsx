@@ -58,7 +58,7 @@ export default function CameramanList() {
               {cameraman._id}
             </CardDescription>
           </CardHeader>
-          <CardContent>Požadovaný plat: {cameraman.salary} Kč</CardContent>
+          <CardContent>Požadovaný plat: {cameraman.salary}</CardContent>
           <CardContent>Kamera: {cameraman.camera}</CardContent>
           <CardFooter className="flex justify-end gap-2">
             <Link to={`/cameraman/${cameraman._id}`}>

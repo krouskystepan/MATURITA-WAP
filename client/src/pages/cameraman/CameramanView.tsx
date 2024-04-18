@@ -71,7 +71,7 @@ export default function CameramanView() {
     <section>
       <h2 className="text-2xl font-bold">Fotografovo ID: {id}</h2>
       <p>Jméno: {cameraman?.name}</p>
-      <p>Požadovaný plat: {cameraman?.salary} Kč</p>
+      <p>Požadovaný plat: {cameraman?.salary}</p>
       <p>Kamera: {cameraman?.camera}</p>
       <div className="mt-2 space-x-3">
         <Link to={`/update-cameraman/${id}`}>
